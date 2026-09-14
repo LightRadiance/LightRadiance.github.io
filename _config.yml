@@ -1,6 +1,23 @@
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
-title: 你的网站标题
-description: 这里是一句简短的网站描述
-show_downloads: true
+
+# ==================== 网站基本信息（改成你自己的） ====================
+title: LightRadiance 的主页
+description: 个人简介与技术笔记
+logo: https://github.com/LightRadiance.png   # 侧边栏头像，直接使用 GitHub 头像；也可改为本地路径 assets/images/avatar.png
+show_downloads: false   # 改为 true 会在页面上显示 "下载 ZIP/TAR" 按钮
+
+# ==================== 个人信息（页面里通过 site.author.xxx 引用） ====================
+author:
+  name: 你的名字
+  bio: 一句话介绍自己，比如：XX 大学 XX 专业在读，对 XX 感兴趣
+  email: your_email@example.com
+  github: LightRadiance
+
+# 文章链接格式：/2026/09/14/文章名.html
+permalink: /:year/:month/:day/:title.html
+
+# 说明文档不参与建站
+exclude:
+- README.md
