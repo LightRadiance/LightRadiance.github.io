@@ -1,7 +1,6 @@
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
-title: [The title of your site]
-description: [A short description of your site's purpose]
-show_downloads: ["true" or "false" (unquoted) to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
+title: 你的网站标题
+description: 这里是一句简短的网站描述
+show_downloads: true
