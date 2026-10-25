@@ -1,21 +1,45 @@
 ---
 layout: default
-title: 文章
 body_class: home
 ---
 
-<section class="wrap home-intro">
-  <p class="eyebrow">Research Notes</p>
-  <div class="home-title-row">
-    <h1 class="home-title">文章</h1>
+<section class="wrap about" id="about">
+  <div class="about-grid">
+    <figure class="portrait">
+      <img src="{{ '/assets/images/portrait.jpg' | relative_url }}" alt="LightRadiance 的照片" width="800" height="1000">
+    </figure>
+
+    <div class="about-copy">
+      <p class="eyebrow">About</p>
+      <h1>LightRadiance</h1>
+
+      <p class="about-lead">
+        本科就读于{{ site.author.education.bachelor }}, 目前在{{ site.author.education.graduate }}读研, 研究方向为 RL
+      </p>
+
+      <div class="contact-block">
+        <p class="eyebrow">联系</p>
+        <p class="contact-line">
+          <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+          <span class="contact-sep" aria-hidden="true">·</span>
+          <span>微信 {{ site.author.wechat }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap articles-section" id="articles" aria-labelledby="articles-title">
+  <div class="articles-head">
+    <div>
+      <p class="eyebrow">Research Notes</p>
+      <h2 class="articles-title" id="articles-title">文章</h2>
+    </div>
     <p class="post-count">
       {% if site.posts.size > 0 %}共 {{ site.posts.size }} 篇{% else %}暂无文章{% endif %}
     </p>
   </div>
-  <p class="home-subtitle">{{ site.description }}</p>
-</section>
 
-<section class="wrap post-list-section" aria-label="文章列表">
   {% if site.posts.size > 0 %}
   <ol class="post-list">
     {% for post in site.posts %}
@@ -23,7 +47,7 @@ body_class: home
       <a class="post-row" href="{{ post.url | relative_url }}">
         <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
         <div class="post-body">
-          <h2 class="post-title">{{ post.title }}</h2>
+          <h3 class="post-title">{{ post.title }}</h3>
           {% assign summary = post.description | default: post.excerpt %}
           {% if summary and summary != "" %}
           <span class="post-summary">{{ summary | strip_html | normalize_whitespace | truncate: 110, "…" }}</span>
