@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<article class="wrap article-layout">
+  <div class="article-main">
+    <header class="article-header">
+      <p class="eyebrow">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y 年 %m 月 %d 日" }}</time>
+      </p>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+      <p class="article-summary">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <div class="prose" id="article-content">
+      {{ content }}
+    </div>
+
+    <footer class="article-footer">
+      <a class="back-link" href="{{ '/' | relative_url }}">← 返回文章列表</a>
+
+      {% if page.previous or page.next %}
+      <nav class="post-nav" aria-label="文章翻页">
+        {% if page.previous %}
+        <a class="post-nav-link prev" href="{{ page.previous.url | relative_url }}">
+          <span class="post-nav-label">上一篇</span>
+          <span class="post-nav-title">{{ page.previous.title }}</span>
+        </a>
+        {% endif %}
+        {% if page.next %}
+        <a class="post-nav-link next" href="{{ page.next.url | relative_url }}">
+          <span class="post-nav-label">下一篇</span>
+          <span class="post-nav-title">{{ page.next.title }}</span>
+        </a>
+        {% endif %}
+      </nav>
+      {% endif %}
+    </footer>
+  </div>
+
+  <aside class="article-aside">
+    <div class="toc" id="toc" hidden>
+      <p class="aside-label">目录</p>
+      <nav class="toc-nav" id="toc-nav" aria-label="目录"></nav>
+    </div>
+
+    {% if page.tags.size > 0 %}
+    <div class="aside-meta">
+      <p class="aside-label">标签</p>
+      <ul class="tag-list">
+        {% for tag in page.tags %}
+        <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div class="aside-meta">
+      <p class="aside-label">发布</p>
+      <p>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
+    </div>
+  </aside>
+</article>

@@ -1,36 +1,57 @@
 ---
 layout: default
-title: 关于我
+title: 关于
+description: 关于 LightRadiance。
+body_class: about
+permalink: /about.html
 ---
 
-# 关于我
+<section class="wrap about">
+  <div class="about-grid">
+    <figure class="portrait">
+      <img src="{{ '/assets/images/portrait.jpg' | relative_url }}" alt="LightRadiance 的照片" width="800" height="1000">
+    </figure>
 
-（这一页是你的个人资料页，把下面的占位内容换成你自己的信息。）
+    <div class="about-copy">
+      <p class="eyebrow">About</p>
+      <h1>LightRadiance</h1>
 
-## 🧑‍🎓 基本情况
+      <p class="about-lead">
+        本科就读于{{ site.author.education.bachelor }}，目前在{{ site.author.education.graduate }}读研究生，对强化学习（Reinforcement Learning）比较感兴趣。
+      </p>
 
-- **姓名 / 昵称**：你的名字
-- **身份**：比如 XX 大学 XX 专业 本科生 / 研究生
-- **研究方向 / 兴趣**：比如 机器人、机器学习、光学……
-- **邮箱**：your_email@example.com
-- **GitHub**：[@LightRadiance](https://github.com/LightRadiance)
+      <p class="about-note">
+        这个网站主要用来记录我在研究探索过程中的阅读、实验与思考。如果你对相关话题感兴趣，欢迎和我交流。
+      </p>
 
-## 🎓 教育经历
+      <dl class="facts">
+        <div>
+          <dt>本科</dt>
+          <dd>{{ site.author.education.bachelor }}</dd>
+        </div>
+        <div>
+          <dt>研究生</dt>
+          <dd>{{ site.author.education.graduate }}</dd>
+        </div>
+        <div>
+          <dt>兴趣方向</dt>
+          <dd>{{ site.author.interest }}</dd>
+        </div>
+      </dl>
 
-- **20XX.09 – 至今**　XX 大学，XX 专业，本科/硕士
-- **20XX.09 – 20XX.06**　XX 中学
-
-## 💡 技能
-
-- 编程语言：Python / C++ / ……
-- 工具：Git / Linux / ……
-- 语言：中文（母语），英语（CET-X）
-
-## 🏆 项目与经历
-
-1. **项目一名称**（20XX）—— 一句话描述你做了什么、用了什么技术。
-2. **项目二名称**（20XX）—— 一句话描述。
-
----
-
-[⬅ 返回首页]({{ '/' | relative_url }})
+      <div class="contact-block">
+        <p class="eyebrow">联系</p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">邮箱</span>
+            <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+          </li>
+          <li>
+            <span class="contact-label">微信</span>
+            <span>{{ site.author.wechat }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

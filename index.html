@@ -1,0 +1,40 @@
+---
+layout: default
+title: 文章
+body_class: home
+---
+
+<section class="wrap home-intro">
+  <p class="eyebrow">Research Notes</p>
+  <div class="home-title-row">
+    <h1 class="home-title">文章</h1>
+    <p class="post-count">
+      {% if site.posts.size > 0 %}共 {{ site.posts.size }} 篇{% else %}暂无文章{% endif %}
+    </p>
+  </div>
+  <p class="home-subtitle">{{ site.description }}</p>
+</section>
+
+<section class="wrap post-list-section" aria-label="文章列表">
+  {% if site.posts.size > 0 %}
+  <ol class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <a class="post-row" href="{{ post.url | relative_url }}">
+        <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+        <div class="post-body">
+          <h2 class="post-title">{{ post.title }}</h2>
+          {% assign summary = post.description | default: post.excerpt %}
+          {% if summary and summary != "" %}
+          <span class="post-summary">{{ summary | strip_html | normalize_whitespace | truncate: 110, "…" }}</span>
+          {% endif %}
+        </div>
+        <span class="post-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="empty-state">还没有文章。在 <code>_posts</code> 目录中新建一篇 Markdown 文件，就可以发布第一篇笔记。</p>
+  {% endif %}
+</section>
