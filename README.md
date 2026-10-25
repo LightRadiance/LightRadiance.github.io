@@ -22,7 +22,7 @@ tags: [强化学习]  # 可选
 
 ## 修改网站
 
-- 个人信息（邮箱、微信、学校、兴趣）：`_config.yml` 的 `author`
+- 个人信息（邮箱、微信、教育经历）：`_config.yml` 的 `author`
 - 个人介绍文案：`index.html` 中 `id="about"` 的部分
 - 首页照片：替换 `assets/images/portrait.jpg`（建议 4:5，800 × 1000）
 - 网站标题与描述：`_config.yml` 的 `title`、`description`

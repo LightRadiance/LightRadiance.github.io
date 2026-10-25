@@ -12,9 +12,14 @@ author:
   wechat: LaborRadiance
   github: LightRadiance
   education:
-    bachelor: 中南大学
-    graduate: 浙江大学
-  interest: 强化学习
+    - school: 中南大学
+      english: Central South University
+      years: 2022-2026
+      major: 人工智能
+    - school: 浙江大学
+      english: Zhejiang University
+      years: 2026-至今
+      major: 软件工程 · RL 方向
 
 # 文章链接格式：/2026/09/14/文章名.html
 permalink: /:year/:month/:day/:title.html
