@@ -1043,3 +1043,16 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* MathJax：让公式继承正文颜色，并避免长公式撑破移动端 */
+
+.prose mjx-container {
+  color: inherit;
+}
+
+.prose mjx-container[display="true"] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.15em 0;
+}

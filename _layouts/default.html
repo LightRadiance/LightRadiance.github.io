@@ -16,6 +16,20 @@
     <meta property="og:image" content="{{ page.image | default: '/assets/images/portrait.jpg' | absolute_url }}">
     {% if page.layout == 'post' %}
     <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    <!-- MathJax：支持行内 $...$ / \(...\) 与独立 $$...$$ / \[...\]；仅在文章页加载 -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
     {% endif %}
     <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#141513" media="(prefers-color-scheme: dark)">
