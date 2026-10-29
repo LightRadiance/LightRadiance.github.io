@@ -1,8 +1,6 @@
 # LightRadiance.github.io
 
-个人网站：分享强化学习方向的研究与探索。个人介绍和文章列表在首页，文章详情单独成页。
-
-网站：<https://lightradiance.github.io>（推送到 GitHub 后 1～2 分钟自动更新）
+网站：<https://lightradiance.github.io>
 
 ## 发布文章
 
@@ -14,7 +12,7 @@ layout: post
 title: 文章标题
 date: 2026-11-02 10:00:00 +0800
 description: 一句话摘要（可选）
-tags: [强化学习]  # 可选
+tags: []  # 可选
 ---
 ```
 
@@ -34,8 +32,4 @@ gem install jekyll
 jekyll serve
 ```
 
-然后打开 `http://localhost:4000`。
-
-## 常见问题
-
-改了没生效？等 1～2 分钟，再强制刷新（Ctrl + Shift + R）；部署状态见仓库 Actions。
+然后打开 `http://localhost:4000`
