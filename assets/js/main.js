@@ -1,3 +1,22 @@
+(function () {
+  const toggle = document.querySelector(".article-aside-toggle");
+  const aside = document.getElementById("article-aside");
+  if (!toggle || !aside) return;
+
+  const layout = toggle.closest(".article-layout");
+  toggle.addEventListener("click", function () {
+    const collapsed = toggle.getAttribute("aria-expanded") === "true";
+    const label = collapsed ? "展开文章边栏" : "收起文章边栏";
+
+    layout.classList.toggle("is-aside-collapsed", collapsed);
+    aside.inert = collapsed;
+    toggle.setAttribute("aria-expanded", String(!collapsed));
+    toggle.setAttribute("aria-label", label);
+    toggle.title = label;
+  });
+  toggle.hidden = false;
+})();
+
 // 自动根据文章中的 h2 / h3 生成右侧目录。
 (function () {
   const content = document.querySelector(".prose");
@@ -59,5 +78,6 @@
     { passive: true }
   );
 
+  new ResizeObserver(setActiveSection).observe(content);
   setActiveSection();
 })();

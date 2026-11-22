@@ -39,26 +39,33 @@ layout: default
     </footer>
   </div>
 
-  <aside class="article-aside">
-    <div class="toc" id="toc" hidden>
-      <p class="aside-label">目录</p>
-      <nav class="toc-nav" id="toc-nav" aria-label="目录"></nav>
-    </div>
+  <div class="article-sidebar">
+    <button class="article-aside-toggle" type="button" aria-controls="article-aside" aria-expanded="true" aria-label="收起文章边栏" title="收起文章边栏" hidden>
+      <span aria-hidden="true">›</span>
+    </button>
+    <aside class="article-aside" id="article-aside">
+      <div class="article-aside-content">
+        <div class="toc" id="toc" hidden>
+          <p class="aside-label">目录</p>
+          <nav class="toc-nav" id="toc-nav" aria-label="目录"></nav>
+        </div>
 
-    {% if page.tags.size > 0 %}
-    <div class="aside-meta">
-      <p class="aside-label">标签</p>
-      <ul class="tag-list">
-        {% for tag in page.tags %}
-        <li>{{ tag }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
+        {% if page.tags.size > 0 %}
+        <div class="aside-meta">
+          <p class="aside-label">标签</p>
+          <ul class="tag-list">
+            {% for tag in page.tags %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
 
-    <div class="aside-meta">
-      <p class="aside-label">发布</p>
-      <p>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
-    </div>
-  </aside>
+        <div class="aside-meta">
+          <p class="aside-label">发布</p>
+          <p>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
+        </div>
+      </div>
+    </aside>
+  </div>
 </article>
