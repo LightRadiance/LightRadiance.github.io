@@ -2,7 +2,7 @@
 layout: post
 title: Rethink the Effectiveness of PER under GPI 
 date: 2026-10-29 
-description: 在一个 50 状态的稀疏奖励链上，用 MSVE 指标检验 PER 是否真的加速收敛。结论是否定的：PER+IS 没有稳定加速，去掉 IS 收敛速度快但不稳定；逆频率采样在一维表格中有效; 当把状态空间维度拓展至二维时, 优势衰减。
+description: 在一个 50 状态的稀疏奖励链上，用 MSVE 指标检验 PER 是否真的加速收敛。结论是否定的：PER+IS 没有稳定加速，去掉 IS 收敛速度快但不稳定；逆频率采样在一维表格中有效，当把状态空间维度拓展至二维时，优势衰减。
 tags: [强化学习, 经验回放, PER]
 ---
 

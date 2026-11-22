@@ -19,7 +19,7 @@ author:
     - school: 浙江大学
       english: Zhejiang University
       years: 2026-至今
-      major: 软件工程 · RL 方向
+      major: 软件工程 · Reinforce Learning · AI Infra
 
 # 文章链接格式：/2026/09/14/文章名.html
 permalink: /:year/:month/:day/:title.html
